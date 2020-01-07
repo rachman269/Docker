@@ -1,0 +1,7 @@
+[program:laravel-horizon]
+process_name=%(program_name)s
+command=php /srv/www/SITE_DIR/artisan horizon
+autostart=true
+autorestart=true
+redirect_stderr=true
+stdout_logfile=/srv/www/SITE_DIR/storage/logs/horizon.log

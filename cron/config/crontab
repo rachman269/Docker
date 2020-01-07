@@ -1,0 +1,2 @@
+# Laravel scheduler
+#* * * * * cd /srv/www/SITE_DIR && php artisan schedule:run >> /dev/null 2>&1

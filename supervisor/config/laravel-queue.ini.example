@@ -1,0 +1,8 @@
+[program:laravel-queue]
+process_name=%(program_name)s_%(process_num)02d
+command=php /srv/www/SITE_DIR/artisan queue:work --sleep=3 --tries=3
+autostart=true
+autorestart=true
+numprocs=8
+redirect_stderr=true
+stdout_logfile=/srv/www/SITE_DIR/storage/logs/queue.log

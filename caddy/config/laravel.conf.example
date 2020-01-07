@@ -1,0 +1,15 @@
+laravel.test:80 {
+    root ./SITE_DIRECTORY/public
+
+    gzip
+    
+    fastcgi / app:9000 php {
+        index index.php
+    }
+    
+    rewrite {
+        r .*
+        ext /
+        to /index.php?{query}
+    }
+}

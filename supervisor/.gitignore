@@ -1,0 +1,5 @@
+logs
+config/*
+!config/supervisord.ini
+!config/laravel-horizon.ini.example
+!config/laravel-queue.ini.example

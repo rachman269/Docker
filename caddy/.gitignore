@@ -1,0 +1,5 @@
+logs
+config/*
+!config/default.conf
+!config/laravel.conf.example
+!config/wordpress.conf.example

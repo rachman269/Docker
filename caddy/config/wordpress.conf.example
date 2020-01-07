@@ -1,0 +1,29 @@
+wordpress.test:80 {
+    root ./SITE_DIRECTORY
+
+    gzip
+    
+    fastcgi / app:9000 php {
+        index index.php
+    }
+    
+    rewrite {
+        r /uploads\/(.*)\.php
+        to /
+    }
+
+    rewrite {
+        regexp ^(/[^/]+)?(/wp-(content|admin|includes).*)
+        to {2}
+    }
+
+    rewrite {
+        regexp ^(/[^/]+)?(/.*\.php)
+        to {2}
+    }
+    
+    rewrite {
+        if {path} not_match ^\/wp-admin
+        to {path} {path}/ /index.php?{query}
+    }
+}
